@@ -12,7 +12,7 @@ def write_df_to_csv(df, directory, filename):
     '''Write the content of a dataframe to a csv file'''
     csv = df.to_csv(index=False)
 
-    os.makedirs(directory)
+    os.makedirs(directory, exist_ok=True)
     output_path = '%s/%s' % (directory, filename)
 
     with open(output_path, 'w') as fd:
